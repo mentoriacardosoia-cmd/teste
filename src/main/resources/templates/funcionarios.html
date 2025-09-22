@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Funcionários</title>
+</head>
+<body>
+<h1>Funcionários</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Cargo</th>
+        <th>Salário</th>
+        <th>Data de Admissão</th>
+        <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="funcionario : ${funcionarios}">
+        <td th:text="${funcionario.id}"></td>
+        <td th:text="${funcionario.nome}"></td>
+        <td th:text="${funcionario.cpf}"></td>
+        <td th:text="${funcionario.cargo}"></td>
+        <td th:text="${funcionario.salario}"></td>
+        <td th:text="${funcionario.dataAdmissao}"></td>
+        <td>
+            <button th:onclick="/funcionarios/ + ${funcionario.id} + /edit">Editar</button>
+            <button th:onclick="/funcionarios/ + ${funcionario.id} + /delete">Deletar</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<button onclick="location.href=/funcionarios/new">Novo Funcionário</button>
+</body>
+</html>
