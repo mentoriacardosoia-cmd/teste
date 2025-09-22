@@ -1,4 +1,4 @@
-
+CRIE ESSE PROJETO CRIANDO CADA ARQUIVO DO JAVA E DO FRONT 
 
 /backend/pom.xml
 xml<?xml version="1.0" encoding="UTF-8"?>
