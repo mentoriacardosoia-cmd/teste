@@ -1,49 +1,83 @@
-Crie um sistema CRUD (Create, Read, Update, Delete) de funcionários usando Java com as seguintes características:
+Desafio Técnico Fullstack - Spring + Angular (Pleno/Sênior)
 
-Estrutura do projeto
+### 📌 Contexto
 
-Projeto em Java utilizando Spring Boot para o backend.
+Você foi contratado para desenvolver uma micro aplicação para alimentação de uma base de dados de Servidores públicos municipais lotados em Secretarias. 
+A aplicação deve permitir: listar, cadastrar, editar e excluir Servidores e Secretarias. 
 
-Banco de dados H2 (em memória) para desenvolvimento, podendo ser substituído por MySQL ou PostgreSQL.
+    • Cada Servidor possui um nome, e-mail e data de nascimento e Secretaria.
 
-Estrutura MVC: Controller, Service, Repository, Model.
+    • Cada Secretaria possui um nome e sigla.
 
-Entidade Funcionário
+---
 
-Campos: id (Long, autoincrement), nome (String), cpf (String), cargo (String), salario (BigDecimal), dataAdmissao (LocalDate).
+### ✅ Requisitos Funcionais
 
-Validações básicas: CPF único, nome obrigatório, salário positivo.
+#### 📦 Backend (Spring Boot)
 
-Operações CRUD
+- Criar API REST com os seguintes endpoints:
+  - GET /servidores: lista todos os servidores
+  - POST /servidores: cria um novo servidor
+  - PUT /servidores: atualiza dados de um servidor
+  - DELETE /servidores/{id}: remove um servidor pelo ID
 
-Create: criar um novo funcionário via endpoint POST /funcionarios.
+  - GET /secretarias: lista todos as secretarias
+  - POST /secretarias: cria uma nova secretaria
+  - PUT /secretarias: atualiza dados de uma secretaria
+  - DELETE /secretarias/{id}: remove uma secretaria pelo ID
 
-Read: listar todos os funcionários ou buscar por ID via GET /funcionarios e /funcionarios/{id}.
+- Validações:
+  - E-mail deve ser válido
+  - Nome obrigatório
+  - Secretaria obrigatória
+  - Data de nascimento válida (de 18 à 75 anos)
+- Persistência em banco de dados
+- CORS habilitado para acesso do frontend
 
-Update: atualizar dados de um funcionário via PUT /funcionarios/{id}.
+#### 💻 Frontend (Angular)
 
-Delete: remover funcionário via DELETE /funcionarios/{id}.
+- Tela com:
+  - Formulário Reativo para cadastrar e editar Servidores e Secretarias
+  - Tabela com listagem de servidores (nome, e-mail, data de nascimento, nome e sigla da secretaria)
+  - Botão para editar servidor
+  - Botão para excluir servidor
+  - Tabela com listagem de secretarias (nome e sigla)
+  - Botão para editar secretaria
+  - Botão para excluir secretaria
+- Comunicação via HTTP/HTTPS com a API
+- Mensagens de erro e sucesso corretamente mapeadas
+- Validação no formulário
 
-Funcionalidades adicionais
+---
 
-Possibilidade de buscar funcionários por nome ou cargo via query parameters.
+### ✅ Requisitos Técnicos
 
-Tratamento de exceções com respostas claras (ex: 404 se funcionário não existir).
+Backend:
+- Java 11+
+- Spring Boot 2.7+
+- Spring Web, Spring Data JPA
+- Padrão RESTful
+- Arquitetura simples com Controller e Service
 
-Uso de DTOs para separar a camada de apresentação da entidade.
+Frontend:
+- Angular 13+
+- Angular Reactive Forms
+- Modularização básica
 
-Front-end (opcional)
+### ⏱️ Tempo Estimado
 
-Uma interface simples em HTML + Thymeleaf ou React/Vue para testar o CRUD.
+4 horas
 
-Tabela de funcionários com botões de editar e deletar.
+### 📁 Entregáveis
 
-Formulário para criar e atualizar funcionários.
+- Arquivo contendo as pastas:
+  - /backend: código Spring Boot
+  - /frontend: código Angular
 
-Extras (opcional)
+### 🚀 Diferenciais
 
-Paginação e ordenação da lista de funcionários.
+- Exportar os dados da listagem para CSV ou XLS.
+- Uso de framework para estilizar o sistema (ex: Materialize, Primeng, etc..)
+- UI com experiência agradável (ex: feedbacks, loading, etc…)
+- Deploy funcional
 
-Autenticação básica com Spring Security.
-
-Logs de operações realizadas (criação, atualização e exclusão).
