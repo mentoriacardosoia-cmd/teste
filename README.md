@@ -1,51 +1,49 @@
-Crie um joguinho de Tetris usando HTML, CSS e JavaScript puro, sem frameworks. O jogo deve ter as seguintes funcionalidades:
+Crie um sistema CRUD (Create, Read, Update, Delete) de funcionários usando Java com as seguintes características:
 
-Interface do jogo
+Estrutura do projeto
 
-Uma área de jogo com grade visível (10x20 células).
+Projeto em Java utilizando Spring Boot para o backend.
 
-Mostra as peças caindo em tempo real.
+Banco de dados H2 (em memória) para desenvolvimento, podendo ser substituído por MySQL ou PostgreSQL.
 
-Mostra a próxima peça em uma área separada.
+Estrutura MVC: Controller, Service, Repository, Model.
 
-Mostra pontuação atual, nível e linhas completas.
+Entidade Funcionário
 
-Peças do Tetris (Tetrominos)
+Campos: id (Long, autoincrement), nome (String), cpf (String), cargo (String), salario (BigDecimal), dataAdmissao (LocalDate).
 
-I, O, T, S, Z, J e L.
+Validações básicas: CPF único, nome obrigatório, salário positivo.
 
-Cada peça tem cor distinta via CSS.
+Operações CRUD
 
-Rotação em 90° ao pressionar tecla “rotate” (seta cima ou espaço).
+Create: criar um novo funcionário via endpoint POST /funcionarios.
 
-Movimento lateral (setas esquerda/direita) e queda rápida (seta para baixo).
+Read: listar todos os funcionários ou buscar por ID via GET /funcionarios e /funcionarios/{id}.
 
-Regras do jogo
+Update: atualizar dados de um funcionário via PUT /funcionarios/{id}.
 
-Linhas completas desaparecem, aumentando a pontuação.
+Delete: remover funcionário via DELETE /funcionarios/{id}.
 
-Velocidade aumenta gradualmente conforme o nível sobe.
+Funcionalidades adicionais
 
-Condição de game over quando novas peças não podem entrar.
+Possibilidade de buscar funcionários por nome ou cargo via query parameters.
 
-Controles do usuário
+Tratamento de exceções com respostas claras (ex: 404 se funcionário não existir).
 
-Teclas de setas: mover e girar peças.
+Uso de DTOs para separar a camada de apresentação da entidade.
 
-Tecla espaço: queda instantânea da peça.
+Front-end (opcional)
 
-Estilo (CSS)
+Uma interface simples em HTML + Thymeleaf ou React/Vue para testar o CRUD.
 
-Cada peça com cores distintas.
+Tabela de funcionários com botões de editar e deletar.
 
-Grade visível com bordas finas.
-
-Fundo agradável e interface limpa.
+Formulário para criar e atualizar funcionários.
 
 Extras (opcional)
 
-Sons para queda de peça e linha completa.
+Paginação e ordenação da lista de funcionários.
 
-Botão para reiniciar o jogo.
+Autenticação básica com Spring Security.
 
-Histórico de pontuação.
+Logs de operações realizadas (criação, atualização e exclusão).
